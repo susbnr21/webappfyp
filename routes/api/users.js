@@ -56,7 +56,7 @@ router.post("/register", (req, res) => {
         from: 'rentalshifters@gmail.com', // sender address
         to: req.body.email, // list of receivers
         subject: 'Registration Successful', // Subject line
-        html: '<p style={{fontWeight: "bold"}}>Hello There, Welcome To Rental Shifters.</p>'// plain text body
+        html: '<p>Hello There, Welcome To Rental Shifters. Your account has been verified and registered successfully. Thank you for using rental shifters. Have a great day.</p>'// plain text body
       };
       transporter.sendMail(mailOptions, function (err, info) {
         if(err)
