@@ -14,6 +14,7 @@ class StruckModal extends Component{
     this.state = {
         name: "",
         contact: "",
+        email: "",
         address_from: "",
         address_to: "",
         truck_size: "Small truck",
@@ -37,6 +38,7 @@ class StruckModal extends Component{
     M.AutoInit();
     const { user } = this.props.auth;
     console.log(this.props.auth.user.name)
+    console.log(this.props.auth.user.email)
     this.setState({name:user.name})
     console.log(this.state.name)
   }
@@ -51,6 +53,7 @@ class StruckModal extends Component{
 
     const truckData = {
       name: this.props.auth.user.name,
+      email: this.state.email,
       contact: this.state.contact,
       address_from: this.state.address_from,
       address_to: this.state.address_to,
@@ -118,9 +121,11 @@ class StruckModal extends Component{
                   </div>
                 </div>
 
-                  <text style={{fontWeight: 'bold', color: 'orange'}}>PLEASE FILL THE FORM BELOW</text>
+                  <div style={{padding: 20}}>
+                    <text style={{fontWeight: 'bold', color: 'orange'}}>Please Fill The Form Below</text>
+                  </div>
 
-                  <div className="input-field col s12">
+                  <div className="input-field col s6">
                     <input type="text"
                       value={this.state.contact}
                       error={errors.contact}
@@ -133,6 +138,22 @@ class StruckModal extends Component{
                     <label htmlFor="contact">Phone Number</label>
                     <span className="red-text">
                       {errors.contact}
+                    </span>
+                  </div>
+                  
+                  <div className="input-field col s6">
+                    <input type="text"
+                      value={this.state.email}
+                      error={errors.email}
+                      id="email" 
+                      onChange={this.handleChange}
+                      className={classnames("", {
+                        invalid: errors.email
+                    })}
+                     />
+                    <label htmlFor="email">Email</label>
+                    <span className="red-text">
+                      {errors.email}
                     </span>
                   </div>
 
@@ -151,6 +172,7 @@ class StruckModal extends Component{
                     {errors.address_from}
                   </span>
                 </div>
+
                 <div className="input-field col s6">
                   <input type="text" 
                     value={this.state.address_to}

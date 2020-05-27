@@ -5,6 +5,10 @@ const TruckSchema = new Schema({
     name: {
         type: String,
     },
+    email: {
+        type: String,
+        required: true
+    },
     contact: {
         type: String,
         required: true

@@ -37,6 +37,7 @@ router.post("/truck", (req, res) => {
         } else {
             const newTruck = new Truck({
                 name: req.body.name,
+                email: req.body.email,
                 contact: req.body.contact,
                 address_from: req.body.address_from,
                 address_to: req.body.address_to,

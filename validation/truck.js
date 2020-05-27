@@ -10,6 +10,9 @@ module.exports = function validateInfoInput(data){
     if (Validator.isEmpty(data.contact)) {
         errors.contact = "Contact field is required";
     }
+    if (Validator.isEmpty(data.email)) {
+        errors.email = "Email field is required";
+    }
 // Address checks
     if (Validator.isEmpty(data.address_from)) {
         errors.address_from = "Current address is required";

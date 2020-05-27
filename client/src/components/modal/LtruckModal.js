@@ -12,6 +12,7 @@ class LtruckModal extends Component{
         super();
         this.state= {
             name: "",
+            email: "",
             contact: "",
             address_from: "",
             address_to: "",
@@ -48,6 +49,7 @@ class LtruckModal extends Component{
 
         const truckData = {
             name: this.props.auth.user.name,
+            email: this.state.email,
             contact: this.state.contact,
             address_from: this.state.address_from,
             address_to: this.state.address_to,
@@ -141,8 +143,10 @@ class LtruckModal extends Component{
                 </div>
 
 
-                    <text style={{fontWeight: 'bold', color: 'orange'}}>PLEASE FILL THE FORM BELOW</text>
-                    <div className="input-field col s12">
+                <div style={{padding: 20}}>
+                    <text style={{fontWeight: 'bold', color: 'orange'}}>Please Fill The Form Below</text>
+                  </div>
+                    <div className="input-field col s6">
                         <input type="text"
                         value={this.state.contact}
                         error={errors.contact}
@@ -155,6 +159,22 @@ class LtruckModal extends Component{
                         <label htmlFor="contact">Phone Number</label>
                         <span className="red-text">
                             {errors.contact}
+                        </span>
+                    </div>
+
+                    <div className="input-field col s6">
+                        <input type="text"
+                        value={this.state.email}
+                        error={errors.email}
+                        id="email" 
+                        onChange={this.handleChange}
+                        className={classnames("", {
+                            invalid: errors.email
+                        })}
+                        />
+                        <label htmlFor="email">Email</label>
+                        <span className="red-text">
+                        {errors.email}
                         </span>
                     </div>
 

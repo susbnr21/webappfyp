@@ -13,6 +13,7 @@ class MtruckModal extends Component{
         this.state= {
             name: "",
             contact: "",
+            email: "",
             address_from: "",
             address_to: "",
             truck_size: "Medium truck",
@@ -48,6 +49,7 @@ class MtruckModal extends Component{
 
         const truckData = {
             name:this.props.auth.user.name,
+            email: this.state.email,
             contact: this.state.contact,
             address_from: this.state.address_from,
             address_to: this.state.address_to,
@@ -63,32 +65,6 @@ class MtruckModal extends Component{
           };
       
           this.props.truckValue(truckData);
-        // axios.post(`http://localhost:5000/vehicles`,
-        // {
-        //     contact: `${this.state.contact}`,
-        //     address_from: `${this.state.address_from}`,
-        //     address_to: `${this.state.address_to}`,
-        //     truck_size: `${this.state.truck_size}`,
-        //     description: `${this.state.description}`,
-        //     weight: `${this.state.weight}`,
-        //     truck_space: `${this.state.truck_space}`,
-        //     capacity_furniture: `${this.state.capacity_furniture}`,
-        //     capacity_box: `${this.state.capacity_box}`
-        // },
-        // {
-        // headers: {
-        //     'Accept': 'application/json',
-        //     'Content-Type': 'application/json; charset=UTF-8',
-        // },
-        
-        // })
-        // .then( res => {
-        //     console.log(res);
-        //     console.log(res.data);
-        // })
-        // .catch(err => {
-        //     console.log(`This is the ${err} error.`)
-        // })
     };
 
 
@@ -139,11 +115,11 @@ class MtruckModal extends Component{
                     </div>
                 </div>
 
-                    <text style={{fontWeight: 'bold', color: 'orange'}}>
-                        PLEASE FILL THE FORM BELOW
-                    </text>
+                <div style={{padding: 20}}>
+                    <text style={{fontWeight: 'bold', color: 'orange'}}>Please Fill The Form Below</text>
+                  </div>
 
-                    <div className="input-field col s12">
+                    <div className="input-field col s6">
                         <input type="text"
                         value={this.state.contact}
                         error={errors.contact}
@@ -156,6 +132,22 @@ class MtruckModal extends Component{
                         <label htmlFor="contact">Phone Number</label>
                         <span className="red-text">
                             {errors.contact}
+                        </span>
+                    </div>
+
+                    <div className="input-field col s6">
+                        <input type="text"
+                        value={this.state.email}
+                        error={errors.email}
+                        id="email" 
+                        onChange={this.handleChange}
+                        className={classnames("", {
+                            invalid: errors.email
+                        })}
+                        />
+                        <label htmlFor="email">Email</label>
+                        <span className="red-text">
+                        {errors.email}
                         </span>
                     </div>
 
