@@ -45,14 +45,23 @@ app.use("/api/admins", admins);
 // importing vehicle
 
 const sendmail = require('./app/controller/sendmail.controller');
+const declinemail = require('./app/controller/declinemail.controller');
 
 app.post('/accept',sendmail.create);
+
+app.post('/decline',declinemail.create);
 
 app.post('/sendmail', sendmail.send);
 
 app.post('/declinemail', sendmail.decline);
 
 app.delete('/accept/:acceptId',sendmail.delete);
+
+app.delete('/decline/:declineId',declinemail.delete);
+
+app.get('/decline',declinemail.findAll);
+
+app.get('/accept',sendmail.findAll);
 
 const port = process.env.PORT || 5000; // process.env.port is Heroku's port if you choose to deploy the app there
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
