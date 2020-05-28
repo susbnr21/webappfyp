@@ -65,33 +65,6 @@ class LtruckModal extends Component{
           };
       
           this.props.truckValue(truckData);
-
-    // axios.post(`http://localhost:5000/vehicles`,
-    // {
-    //   contact: `${this.state.contact}`,
-    //   address_from: `${this.state.address_from}`,
-    //   address_to: `${this.state.address_to}`,
-    //   truck_size: `${this.state.truck_size}`,
-    //   description: `${this.state.description}`,
-    //   weight: `${this.state.weight}`,
-    //   truck_space: `${this.state.truck_space}`,
-    //   capacity_furniture: `${this.state.capacity_furniture}`,
-    //   capacity_box: `${this.state.capacity_box}`
-    // },
-    // {
-    //   headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json; charset=UTF-8',
-    //   },
-      
-    // })
-    //   .then( res => {
-    //     console.log(res);
-    //     console.log(res.data);
-    //   })
-    //   .catch(err => {
-    //     console.log(`This is the ${err} error.`)
-    //   })
     };
 
 

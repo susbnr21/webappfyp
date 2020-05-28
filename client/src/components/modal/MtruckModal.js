@@ -279,5 +279,3 @@ MtruckModal.propTypes = {
     mapStateToProps,
     { truckValue }
   )(MtruckModal);
-  
-// export default MtruckModal;
