@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import Background from '../../assets/boxs.jpeg';
 import logo from '../../assets/Logo.png';
 import Chatbot from '../chatbot/Chatbot';
-// import axios from 'axios';
 
 import Navbar from "../layout/Navbar.js";
 
